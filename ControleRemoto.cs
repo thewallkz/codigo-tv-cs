@@ -20,7 +20,7 @@ namespace codigo_tv_cs
                 if (Int32.TryParse(entrada, out canal))
                 {
                     tv.canal = canal;
-                    System.Console.WriteLine("Canal: "+tv.canal);
+                    System.Console.WriteLine("Canal: " + tv.canal);
                 }
                 else
                 {
@@ -37,7 +37,8 @@ namespace codigo_tv_cs
             if (tv.power)
             {
                 tv.volume++;
-                System.Console.WriteLine("Volume: "+tv.volume);
+                tv.volume = tv.volumeMaximo(tv.volume);
+                System.Console.WriteLine("Volume: " + tv.volume);
             }
             else
             {
@@ -49,7 +50,8 @@ namespace codigo_tv_cs
             if (tv.power)
             {
                 tv.volume--;
-                System.Console.WriteLine("Volume: "+tv.volume);
+                tv.volume = tv.volumeMinimo(tv.volume);
+                System.Console.WriteLine("Volume: " + tv.volume);
             }
             else
             {
